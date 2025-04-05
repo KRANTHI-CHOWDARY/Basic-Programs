@@ -1,0 +1,37 @@
+import java.util.*;
+public class Armstrong
+{
+    public static int check(int num,int count)
+    {
+        int sum=0;
+        while(num!=0)
+        {
+            int temp=num%10;
+            sum+=(int)Math.pow(temp,count);
+            num/=10;
+        }
+        return sum;
+    }
+    public static int numberOfDigits(int num)
+    {
+        int count=0;
+        while(num!=0)
+        {
+            num/=10;
+            count++;
+        }
+        return count;
+    }
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Number: ");
+		int num=sc.nextInt();
+		int count=numberOfDigits(num);
+		int sum=check(num,count);
+		if(sum==num)
+		System.out.println(num+" is an Armstrong number..");
+		else
+		System.out.println(num+" is not an Armstrong number..");
+	}
+}
