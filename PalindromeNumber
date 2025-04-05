@@ -1,0 +1,29 @@
+import java.util.*;
+public class PalindromeNumber
+{
+    static String rev(String s1)
+    {
+        String s="";
+        for(int i=s1.length()-1;i>=0;i--)
+        {
+            s=s+s1.charAt(i);
+        }
+        return s;
+    }
+    public static  boolean isPalindrome(int x) 
+    {
+        String s1=Integer.toString(x);
+        String s2=rev(s1);
+        if(s1.equals(s2))
+        return true;
+        else
+        return false;
+    }
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Number: ");
+		int num=sc.nextInt();
+		System.out.println(isPalindrome(num));
+	}
+}
